@@ -1,0 +1,77 @@
+# --------------------------------------------
+# Teste 1: Listar todos os itens (OCaml)
+# Comando: ./main.exe listar_items
+# Objetivo: Verificar se todos os 33 itens são listados e ordenados por categoria → marca → nome.
+# --------------------------------------------
+listar_items
+
+# --------------------------------------------
+# Teste 2: Orçamento de Peças para Serviços 1 e 5 (OCaml)
+# Comando: ./main.exe orcamento_items 1,5
+# Serviços:
+#   1: Troca de Óleo (categorias: Oleos, Filtros Oleo)
+#   5: Troca de Anticongelante (categorias: Anticongelantes)
+# Esperado: 
+#   - 1 peça de "Oleo Helix 10W40" (Shell, Oleos) e "Filtro de Oleo" (MANN-FILTER)
+#   - 1 peça de "Anticongelante 5L Energy Plus" (Krafft, Anticongelantes)
+# --------------------------------------------
+orcamento_items 1,5
+
+# --------------------------------------------
+# Teste 3: Cálculo de Mão de Obra para Serviços 6 e 7 (OCaml)
+# Comando: ./main.exe orcamento_mecanico 6,7
+# Serviços:
+#   6: Substituição de Correia (2 mecânicos, 3h)
+#   7: Troca de Pneu (2 mecânicos, 1.5h)
+# Esperado: 
+#   - Desconto de 15% para serviço 6 (>4h total: 2 mecânicos * 3h = 6h)
+#   - Sem desconto para serviço 7 (3h total)
+# --------------------------------------------
+orcamento_mecanico 6,7
+
+# --------------------------------------------
+# Teste 4: Descontos em Peças para Serviços 2 e 16 (OCaml)
+# Comando: ./main.exe orcamento_desconto_items 2,16
+# Serviços:
+#   2: Substituição de Velas (categoria: Velas)
+#   16: Revisão Geral (categorias: Oleos, Filtros Oleo, Velas, etc.)
+# Esperado:
+#   - Desconto de 15% em peças Bosch (ex.: Velas N60)
+# --------------------------------------------
+orcamento_desconto_items 2,16
+
+# --------------------------------------------
+# Teste 5: Custos Fixos para Serviços 14 e 15 (OCaml)
+# Comando: ./main.exe orcamento_preco_fixo 14,15
+# Serviços:
+#   14: Reboque (custo fixo: €120.00)
+#   15: Lavagem de Motor (custo fixo: €50.00)
+# Esperado: 
+#   - Saída: "14;120.00" e "15;50.00"
+# --------------------------------------------
+orcamento_preco_fixo 14,15
+
+# --------------------------------------------
+# Teste 6: Orçamento Final para Serviços 1,5,14 (OCaml + Java)
+# Comando: ./main.exe orcamento_final 1,5,14
+# Esperado: 
+#   - Peças: Óleo + Filtro + Anticongelante
+#   - Mão de obra: Troca de Óleo (0.5h) + Anticongelante (1h)
+#   - Custo fixo: Reboque (€120.00)
+#   - Descontos: Aplicados nas peças (ex.: Shell, Krafft)
+# --------------------------------------------
+orcamento_final 1,5,14
+
+# --------------------------------------------
+# Teste 7: Comando Inválido (Tratamento de Erro)
+# Comando: ./main.exe comando_inexistente
+# Esperado: Mensagem de erro listando comandos válidos.
+# --------------------------------------------
+comando_inexistente
+
+# --------------------------------------------
+# Teste 8: Carrinho Fictício (Java - Classe Cart)
+# Objetivo: Adicionar 2x Item 1 (Óleo) e 1x Item 3 (Bateria)
+# Saída Esperada: Total = (2*25.99) + 199.00 = €251.98
+# --------------------------------------------
+# (Executar o método main em Cart.java)
